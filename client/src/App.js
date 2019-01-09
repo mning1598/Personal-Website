@@ -15,51 +15,48 @@ import CloseIcon from '@material-ui/icons/Close';
 
 import Form from './Form';
 
-const backgroundgrad = {
-  background: 'linear-gradient(to right bottom, #ca99ff, #ccffd9)'
+const styles = {
+  backgroundgrad: {
+    background: 'linear-gradient(to right bottom, #ccffd9, #ca99ff)'
+  },
+  socialButton: {
+    width: '5%',
+    margin: '10px'
+  },
+  profpic: { 
+    width: '25%', 
+    margin: '0 auto 20px'
+  },
+  homeContainer: {
+    maxWidth: 700,
+    margin: 'auto'
+  },
+  containerElevate: {
+    border: '1px outset',
+  },
+  containerTitle: {
+    fontSize:30
+  },
+  mlr40: {
+    margin: '0px 40px 0px'
+
+  },
+  projectContent: {
+
+  },
+  projTitle: {
+    fontSize: 22
+  },
+  proj1: {
+    width :'25%',
+    margin: '0 auto 30px'
+  },
+  photo: {
+    width : '100%',
+    margin: '0px 0px 25px'
+  }
 };
 
-const socialButton = {
-  width: '5%',
-  margin: '10px'
-};
-
-const profpic = { 
-  width: '25%', 
-  margin: '0 auto 20px'
-};
-
-const homeContainer = {
-  maxWidth: 700,
-  margin: 'auto'
-};
-
-const containerTitle = {
-  fontSize:30
-}
-const mlr40 = {
-  margin: '0px 40px 0px'
-
-}
-
-const projTitle = {
-  fontSize: 22
-};
-
-const projectContent = {
-
-};
-
-const proj1 = {
-  width :'25%',
-  margin: '0 auto 30px'
-
-};
-
-const photo = {
-  width : '100%',
-  margin: '0px 0px 25px'
-}
 
 
 
@@ -161,7 +158,7 @@ class App extends Component {
       return null;
     }
     return (
-      <div style={backgroundgrad}>
+      <div style={styles.backgroundgrad}>
         <Navbar inverse collapseOnSelect>
           <Navbar.Header>
             <Navbar.Brand>
@@ -199,11 +196,12 @@ class App extends Component {
 
 
 
-        <div className="text-center" style={homeContainer}>
-          <Jumbotron>
+        <div className="text-center" style={styles.homeContainer}>
+        
+          <Jumbotron style={styles.containerElevate}>
             <div>
-              <Row className="show-grid text-center" style={mlr40}>
-                  <Image src="/assets/m_pic.jpg" circle style= {profpic}/>
+              <Row className="show-grid text-center" style={styles.mlr40}>
+                  <Image src="/assets/m_pic.jpg" circle style= {styles.profpic}/>
                   <h1>Michael Ning</h1>
                   <p>
                     I am a computer science student at Virginia Tech currently trying to learn more about web development.
@@ -214,13 +212,13 @@ class App extends Component {
               </Row>
 
               <a href="https://github.com/mning1598">
-                <Image src="/assets/gitpic.png" circle style= {socialButton}/>
+                <Image src="/assets/gitpic.png" circle style= {styles.socialButton}/>
               </a>
               <a href="https://www.linkedin.com/in/michael-ning-616a26126/">
-                <Image src="/assets/linkedinpic.png" circle style= {socialButton}/>
+                <Image src="/assets/linkedinpic.png" circle style= {styles.socialButton}/>
               </a>
               <a href="https://www.facebook.com/mning1598">
-                <Image src="/assets/fbpic.png" circle style= {socialButton}/>
+                <Image src="/assets/fbpic.png" circle style= {styles.socialButton}/>
               </a>
 
             </div>
@@ -228,14 +226,14 @@ class App extends Component {
         </div>
 
 
-        <div style={homeContainer}>
-          <Jumbotron>
+        <div style={styles.homeContainer}>
+          <Jumbotron style={styles.containerElevate}>
             <div>
-              <Row className="show-grid" style={mlr40}>
-                <h1 style={containerTitle}>My Projects</h1>
-                <div className="text-center" style={projectContent}>
-                  <h3 style={projTitle}>Rate My VT Professors</h3>
-                  <Image src="/assets/rateprofproj.png" style={proj1}/>
+              <Row className="show-grid" style={styles.mlr40}>
+                <h1 style={styles.containerTitle}>My Projects</h1>
+                <div className="text-center" style={styles.projectContent}>
+                  <h3 style={styles.projTitle}>Rate My VT Professors</h3>
+                  <Image src="/assets/rateprofproj.png" style={styles.proj1}/>
                   <p>This chrome extension helps students sign up for classes through Virginia Tech's class drop/add portal. This chrome extension displays reviews and ratings for classes, as well as teachers, with just a single click.</p>
                 </div>
               </Row>
@@ -244,36 +242,36 @@ class App extends Component {
 
         </div>
 
-        <div style={homeContainer}>
-          <Jumbotron>
+        <div style={styles.homeContainer}>
+          <Jumbotron style={styles.containerElevate}>
             <div>
 
-              <Row className="show-grid" style={mlr40}>
-                <h1 style={containerTitle}>iPhone Photography</h1>
+              <Row className="show-grid" style={styles.mlr40}>
+                <h1 style={styles.containerTitle}>iPhone Photography</h1>
 
                 <Col xs={6} md={6}>
-                  <Image src="/assets/IMG_a6345.jpg" style={photo} />
+                  <Image src="/assets/IMG_a6345.jpg" style={styles.photo} />
                 </Col>
                 <Col xs={6} md={6}>
-                  <Image src="/assets/IMG_a5289.jpg" style={photo} />
+                  <Image src="/assets/IMG_a5289.jpg" style={styles.photo} />
                 </Col>
                 <Col xs={6} md={6}>
-                  <Image src="/assets/IMG_a5359.jpg" style={photo} />
+                  <Image src="/assets/IMG_a5359.jpg" style={styles.photo} />
                 </Col>
                 <Col xs={6} md={6}>
-                  <Image src="/assets/IMG_a0023.jpg" style={photo} />
+                  <Image src="/assets/IMG_a0023.jpg" style={styles.photo} />
                 </Col>
                 <Col xs={6} md={6}>
-                  <Image src="/assets/IMG_a0089.jpg" style={photo} />
+                  <Image src="/assets/IMG_a0089.jpg" style={styles.photo} />
                 </Col>
                 <Col xs={6} md={6}>
-                  <Image src="/assets/IMG_a0087.jpg" style={photo} />
+                  <Image src="/assets/IMG_a0087.jpg" style={styles.photo} />
                 </Col>
                 <Col xs={6} md={6}>
-                  <Image src="/assets/IMG_a0094.jpg" style={photo} />
+                  <Image src="/assets/IMG_a0094.jpg" style={styles.photo} />
                 </Col>
               </Row>
-              <Row className="show-grid" style={mlr40}>
+              <Row className="show-grid" style={styles.mlr40}>
 
 
               </Row>
