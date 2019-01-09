@@ -28,9 +28,10 @@ export default class Form extends React.Component {
 		const {text} = this.state;
 		return (
 			<TextField
+				style={{margin: 20, width: '88%'}}
 				onChange={this.handleChange}
 				onKeyDown={this.handleKeyDown}
-				label = "todo..."
+				label = "  What should Michael do next?"
 				value={text}
 				margin="normal"
 				fullWidth

@@ -11,6 +11,9 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Checkbox from '@material-ui/core/Checkbox';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
+import Scrollchor from 'react-scrollchor';
+import {CircleArrow as ScrollUpButton} from "react-scroll-up-button";
+
 
 
 import Form from './Form';
@@ -29,7 +32,7 @@ const styles = {
   },
   homeContainer: {
     maxWidth: 700,
-    margin: 'auto'
+    margin: '0px auto 30px'
   },
   containerElevate: {
     border: '1px outset',
@@ -48,12 +51,30 @@ const styles = {
     fontSize: 22
   },
   proj1: {
+    width :'40%',
+    margin: '0 auto 30px'
+  },
+  proj2: {
     width :'25%',
     margin: '0 auto 30px'
+  },  
+  workpic: {
+    width :'5%',
+    margin: '0px 15px 3px 0px'
   },
   photo: {
     width : '100%',
     margin: '0px 0px 25px'
+  },
+  jobTitle: {
+    fontSize: 18
+  },
+  workbullet: {
+    fontSize: 16,
+    margin: '0px 0px 0px'
+  },
+  containerP: {
+    padding: '25px 0px 50px 0px'
   }
 };
 
@@ -158,7 +179,14 @@ class App extends Component {
       return null;
     }
     return (
+
       <div style={styles.backgroundgrad}>
+        <div>
+          <ScrollUpButton
+            ShowAtPosition={250}
+            AnimationDuration={1000}
+          />
+        </div>
         <Navbar inverse collapseOnSelect>
           <Navbar.Header>
             <Navbar.Brand>
@@ -169,21 +197,28 @@ class App extends Component {
           <Navbar.Collapse>
             <Nav>
               <NavItem eventKey={1} href="/">
+                <Scrollchor to="#projSec">
+                  Projects
+                </Scrollchor>
+              </NavItem>
+              <NavItem eventKey={1} href="/">
+                <Scrollchor to="#workSec">
+                  Work Experience
+                </Scrollchor>
+              </NavItem>
+              <NavItem eventKey={2} href="/">
+                <Scrollchor to="#photoSec">
+                  Photography
+                </Scrollchor>
+              </NavItem>
+              <NavItem eventKey={2} href="/">
+                <Scrollchor to="#todoSec">
+                  TO DO
+                </Scrollchor>
+              </NavItem>
+              <NavItem eventKey={2} href="/">
                 Video Sharing
               </NavItem>
-              <NavItem eventKey={2} href="/">
-                Photography
-              </NavItem>
-              <NavItem eventKey={2} href="/">
-                TO DO
-              </NavItem>
-              <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-                <MenuItem eventKey={3.1}>Action</MenuItem>
-                <MenuItem eventKey={3.2}>Another action</MenuItem>
-                <MenuItem eventKey={3.3}>Something else here</MenuItem>
-                <MenuItem divider />
-                <MenuItem eventKey={3.3}>Separated link</MenuItem>
-              </NavDropdown>
             </Nav>
             <Nav pullRight>
               <NavItem eventKey={1} href="#">
@@ -198,8 +233,8 @@ class App extends Component {
 
         <div className="text-center" style={styles.homeContainer}>
         
-          <Jumbotron style={styles.containerElevate}>
-            <div>
+          <Paper elevation={2}>
+            <div style={styles.containerP}>
               <Row className="show-grid text-center" style={styles.mlr40}>
                   <Image src="/assets/m_pic.jpg" circle style= {styles.profpic}/>
                   <h1>Michael Ning</h1>
@@ -222,29 +257,67 @@ class App extends Component {
               </a>
 
             </div>
-          </Jumbotron>
+          </Paper>
         </div>
 
 
-        <div style={styles.homeContainer}>
-          <Jumbotron style={styles.containerElevate}>
-            <div>
+        {/* Personal Projects */}
+
+        <div id="projSec" style={styles.homeContainer}>
+          <Paper elevation={2}>
+            <div style={styles.containerP}>
               <Row className="show-grid" style={styles.mlr40}>
                 <h1 style={styles.containerTitle}>My Projects</h1>
                 <div className="text-center" style={styles.projectContent}>
+                  <h3 style={styles.projTitle}>MediaWalls (Under Development*)</h3>
+                  <Image src="/assets/wallproj.png" style={styles.proj1}/>
+                  <p>Media sharing website for two people to communicate/save pictures, videos, and links.</p>
+                </div>
+              </Row>
+              <Row className="show-grid" style={styles.mlr40}>
+                <div className="text-center" style={styles.projectContent}>
                   <h3 style={styles.projTitle}>Rate My VT Professors</h3>
-                  <Image src="/assets/rateprofproj.png" style={styles.proj1}/>
+                  <Image src="/assets/rateprofproj.png" style={styles.proj2}/>
                   <p>This chrome extension helps students sign up for classes through Virginia Tech's class drop/add portal. This chrome extension displays reviews and ratings for classes, as well as teachers, with just a single click.</p>
                 </div>
               </Row>
             </div>
-          </Jumbotron>
+          </Paper>
 
         </div>
 
-        <div style={styles.homeContainer}>
-          <Jumbotron style={styles.containerElevate}>
-            <div>
+        {/* Work Experience */}
+
+        <div id="workSec" style={styles.homeContainer}>
+          <Paper elevation={2}>
+            <div  style={styles.containerP}>
+              <Row className="show-grid" style={styles.mlr40}>
+                <h1 style={styles.containerTitle}>Work Experience</h1>
+                <div style={styles.projectContent}>
+                  <h4 style={styles.projTitle}><Image src="/assets/LMsmall.jpeg" style={styles.workpic}/>Lockheed Martin </h4>
+                  <h5 style={styles.jobTitle}> Software Engineer Intern</h5>
+                  <p style={styles.workbullet}>• Created Python scripts and used NLP tools to organize and analyze proprietary reports/data</p>
+                  <p style={styles.workbullet}>• Developed input modules for internal applications in Java to scrape internet search engines</p>
+                  <p style={styles.workbullet}>• Created a Python script to process unstructured heatmap data and graph competitor relationships</p>
+                </div>
+                <div style={styles.projectContent}>
+                  <h4 style={styles.projTitle}><Image src="/assets/ESOsmall.png" style={styles.workpic}/>Employee Stock Option Fund (ESO Fund)</h4>
+                  <h5 style={styles.jobTitle}>Summer Analyst</h5>
+                  <p style={styles.workbullet}>• Used Javascript and Python to build efficient automation algorithms for data gathering</p>
+                  <p style={styles.workbullet}>• Developed a Chrome extension as a tool to interact with ESO Fund’s AWS server and database</p>
+                  <p style={styles.workbullet}>• Used Google Sheet’s script editor to automate data cleaning tools to standardize data entries</p>
+                </div>
+              </Row>
+            </div>
+          </Paper>
+
+        </div>
+
+        {/* iPhone Photography */}
+
+        <div id="photoSec" style={styles.homeContainer}>
+          <Paper elevation={2}>
+            <div style={styles.containerP}>
 
               <Row className="show-grid" style={styles.mlr40}>
                 <h1 style={styles.containerTitle}>iPhone Photography</h1>
@@ -276,12 +349,14 @@ class App extends Component {
 
               </Row>
             </div>
-          </Jumbotron>
+          </Paper>
         </div>
 
-        <div style={{display: 'flex'}}>
-          <div style={{ margin: "75px auto", width: 400}}>
-            <Paper elevation={1}>
+        {/* Todo List */}
+
+        <div id="todoSec" style={styles.homeContainer}>
+          <div style={styles.containerP}>
+            <Paper elevation={2}>
               <Form submit={this.createTodo} />
               <List>
                 {todos.map(todo => (
