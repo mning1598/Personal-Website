@@ -15,7 +15,6 @@ import Scrollchor from 'react-scrollchor';
 import {CircleArrow as ScrollUpButton} from "react-scroll-up-button";
 
 
-
 import Form from './Form';
 
 const styles = {
@@ -75,6 +74,15 @@ const styles = {
   },
   containerP: {
     padding: '25px 0px 50px 0px'
+  },
+  name: {
+    fontSize: 28,
+    margin: '0px 0px 0px'
+  },
+  details: {
+    fontSize:18,
+    color: 'grey',
+    margin: '0px 0px 20px'
   }
 };
 
@@ -206,17 +214,17 @@ class App extends Component {
                   Work Experience
                 </Scrollchor>
               </NavItem>
-              <NavItem eventKey={2} href="/">
+              <NavItem eventKey={1} href="/">
                 <Scrollchor to="#photoSec">
                   Photography
                 </Scrollchor>
               </NavItem>
-              <NavItem eventKey={2} href="/">
+              <NavItem eventKey={1} href="/">
                 <Scrollchor to="#todoSec">
                   TO DO
                 </Scrollchor>
               </NavItem>
-              <NavItem eventKey={2} href="/">
+              <NavItem eventKey={1} href="#">
                 Video Sharing
               </NavItem>
             </Nav>
@@ -237,7 +245,8 @@ class App extends Component {
             <div style={styles.containerP}>
               <Row className="show-grid text-center" style={styles.mlr40}>
                   <Image src="/assets/m_pic.jpg" circle style= {styles.profpic}/>
-                  <h1>Michael Ning</h1>
+                  <h1 style={styles.name}>Michael Ning</h1>
+                  <p style={styles.details}>Front-End Developer | Student</p>
                   <p>
                     I am a computer science student at Virginia Tech currently trying to learn more about web development.
                   </p>

@@ -2,10 +2,12 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://mning1598.github.io/Personal-Website/",
   "dependencies": {
     "@material-ui/core": "^3.8.2",
     "@material-ui/icons": "^3.0.2",
     "apollo-boost": "^0.1.23",
+    "gh-pages": "^1.1.0",
     "graphql": "^14.0.2",
     "graphql-tag": "^2.10.0",
     "react": "^16.7.0",
@@ -14,6 +16,8 @@
     "react-scripts": "2.1.3"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
