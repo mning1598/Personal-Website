@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import gql from "graphql-tag"
 import { graphql, compose } from 'react-apollo';
-import { Button, ButtonGroup, DropdownButton, ButtonToolbar, Image, Jumbotron, Navbar, Nav, NavItem, NavDropdown, MenuItem, Row, Col } from 'react-bootstrap';
+import { Image, Navbar, Nav, NavItem, Row, Col } from 'react-bootstrap';
 //import { Layout, Header, Navigation, Drawer, Content } from 'react-mdl';
 import Paper from '@material-ui/core/Paper';
 import List from '@material-ui/core/List';
@@ -16,6 +16,8 @@ import {CircleArrow as ScrollUpButton} from "react-scroll-up-button";
 
 
 import Form from './Form';
+
+document.title = 'Michael Ning Portfolio';
 
 const styles = {
   backgroundgrad: {
