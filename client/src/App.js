@@ -226,14 +226,6 @@ class App extends Component {
                   TO DO
                 </Scrollchor>
               </NavItem>
-              <NavItem eventKey={1} href="#">
-                Video Sharing
-              </NavItem>
-            </Nav>
-            <Nav pullRight>
-              <NavItem eventKey={1} href="#">
-                Contact Me
-              </NavItem>
             </Nav>
           </Navbar.Collapse>
         </Navbar>

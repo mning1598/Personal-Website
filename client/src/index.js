@@ -8,7 +8,7 @@ import 'react-mdl/extra/material.js';
 import * as serviceWorker from './serviceWorker';
 
 const client = new ApolloClient({
-	uri: "http://localhost:4000"
+	uri: "http://35.171.160.86:4000"
 });
 
 

@@ -11,6 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "graphql-yoga": "^1.16.9",
-    "mongoose": "^5.4.3"
+    "mongoose": "^5.4.4"
   }
 }

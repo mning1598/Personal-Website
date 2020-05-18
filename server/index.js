@@ -6,8 +6,8 @@ const mongoose = require("mongoose");
 //   res.send("Hello World!");
 //});
 //app.listen(8080, '35.171.160.86');
-mongoose.connect("mongodb://localhost/test");
-//mongoose.connect("mongodb://localhost/test", { useNewUrlParser: true });
+//mongoose.connect("mongodb://localhost/test");
+mongoose.connect("mongodb://localhost/test", { useNewUrlParser: true });
 const Todo = mongoose.model('Todo', {
 	text: String,
 	complete: Boolean
@@ -52,7 +52,13 @@ const resolvers = {
 	}
 };
 
-const server = new GraphQLServer({ typeDefs, resolvers, introspection: true, playground: true });
+const server = new GraphQLServer({ 
+	typeDefs, 
+	resolvers, 
+	introspection: true, 
+	playground: true 
+});
+
 mongoose.connection.once('open', function() {
 	server.start(() => console.log('Server is running on localhost:4000'))
 });
